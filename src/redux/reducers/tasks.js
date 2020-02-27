@@ -9,7 +9,7 @@ const tasks = (state = [], action) => {
 				}
 			]
 		case "REMOVE_TASK": {
-			let newState = Object.create(state)
+			let newState = JSON.parse(JSON.stringify(state))
 			newState.splice(
 				state.findIndex(val => val.id === action.id),
 				1
