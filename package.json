@@ -1,0 +1,59 @@
+{
+	"name": "taskmanagerpp",
+	"private": true,
+	"version": "0.1.0",
+	"description": "Task manager for managing your tasks",
+	"main": "",
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run build:prod"
+		}
+	},
+	"scripts": {
+		"build:prod": ". ./scripts/setProd.sh && npm run build",
+		"build:dev": ". ./scripts/setDev.sh && npm run build",
+		"build": "npx webpack",
+		"eslint": "npx eslint ./src/*.jsx ./src/**/*.jsx ./src/**/*.js *.js",
+		"watch": "npm run build:dev -- -- --watch",
+		"eslint:fix": "npm run eslint -- --fix"
+	},
+	"author": "G lander",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/plugin-syntax-nullish-coalescing-operator": "^7.7.4",
+		"@babel/preset-react": "^7.7.4",
+		"babel": "^6.23.0",
+		"babel-loader": "^8.0.6",
+		"babel-minify": "^0.5.1",
+		"babel-plugin-console": "^0.2.1",
+		"babel-plugin-macros": "^2.8.0",
+		"babel-plugin-minify-constant-folding": "^0.5.0",
+		"babel-preset-minify": "^0.5.1",
+		"configstore": "^5.0.0",
+		"css-loader": "^3.4.0",
+		"editorconfig": "^0.15.3",
+		"eslint": "^6.7.2",
+		"eslint-config-standard": "^14.1.0",
+		"eslint-plugin-import": "^2.19.1",
+		"eslint-plugin-node": "^10.0.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-react": "^7.18.0",
+		"eslint-plugin-standard": "^4.0.1",
+		"file-loader": "^5.0.2",
+		"html-webpack-plugin": "^3.2.0",
+		"husky": "^4.2.3",
+		"keycode": "^2.2.0",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"react-redux": "^7.2.0",
+		"react-router-dom": "^5.1.2",
+		"redux": "^4.0.5",
+		"shortid": "^2.2.15",
+		"style-loader": "^1.1.2",
+		"styled-components": "^5.0.0",
+		"webpack": "^4.41.5",
+		"webpack-archive-plugin": "^3.0.0",
+		"webpack-cli": "^3.3.10"
+	}
+}
