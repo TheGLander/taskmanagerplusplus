@@ -1,5 +1,4 @@
 import React from "react"
-import styles from "../styles"
 import { newTask } from "../redux/actions"
 import { connect } from "react-redux"
 class TaskAdder extends React.Component {
@@ -23,13 +22,12 @@ class TaskAdder extends React.Component {
 		return (
 			<form onSubmit={this.appendTask}>
 				<input
-					style={styles.inline}
 					type="text"
 					placeholder="Enter tasks here"
 					value={this.state.text}
 					onChange={this.handleChange}
 				/>
-				<button style={styles.inline}>Add task</button>
+				<button>Add task</button>
 			</form>
 		)
 	}

@@ -5,18 +5,23 @@ const tasks = (state = [], action) => {
 				...state,
 				{
 					id: action.id,
-					name: action.name
-				}
+					name: action.name,
+				},
 			]
 		case "REMOVE_TASK": {
 			let newState = JSON.parse(JSON.stringify(state))
 			newState.splice(
-				state.findIndex(val => val.id === action.id),
+				state.findIndex((val) => val.id === action.id),
 				1
 			)
 			return newState
 		}
-
+		case "EDIT_TASK": {
+			let newState = JSON.parse(JSON.stringify(state))
+			newState[state.findIndex((val) => val.id === action.id)].name =
+				action.newName
+			return newState
+		}
 		default:
 			return state
 	}

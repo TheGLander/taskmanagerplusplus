@@ -1,20 +1,21 @@
 import { generate } from "shortid/lib"
 
-export const newTask = name => ({
+export const newTask = (name) => ({
 	type: "NEW_TASK",
 	id: generate(),
-	name
+	name,
 })
 
-export const removeTask = id => ({
+export const removeTask = (id) => ({
 	type: "REMOVE_TASK",
-	id
+	id,
 })
-export const editTask = id => ({
+export const editTask = (id, newName) => ({
 	type: "EDIT_TASK",
-	id
+	id,
+	newName,
 })
 
 export const saveEdit = () => ({
-	type: "SAVE_EDIT"
+	type: "SAVE_EDIT",
 })
