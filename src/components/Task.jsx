@@ -2,6 +2,7 @@ import React from "react"
 import AcButton from "./AcButton"
 import { connect } from "react-redux"
 import { removeTask, editTask } from "../redux/actions"
+import styles from "../styles"
 class Task extends React.Component {
 	constructor(props) {
 		super(props)
@@ -24,7 +25,7 @@ class Task extends React.Component {
 		if (!this.state.editing) value = this.props.value
 		else
 			value = (
-				<form onSubmit={this.toggleEditing}>
+				<form onSubmit={this.toggleEditing} style={styles.inline}>
 					<input
 						type="text"
 						placeholder="Modify your task here"
