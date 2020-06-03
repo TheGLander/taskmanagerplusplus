@@ -6,13 +6,12 @@ import { connect } from "react-redux"
 class TaskList extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state = { mom: props.mom }
 	}
 	render() {
 		return (
 			<div>
 				<ol>
-					{this.props.tasks.map(task => (
+					{this.props.tasks.map((task) => (
 						<Task
 							value={task.name}
 							key={task.id}
@@ -21,13 +20,13 @@ class TaskList extends React.Component {
 						/>
 					))}
 				</ol>
-				<TaskAdder taskList={this} />
+				<TaskAdder />
 			</div>
 		)
 	}
 }
-const mapStateToProps = state => ({
-	tasks: state.tasks
+const mapStateToProps = (state) => ({
+	tasks: state.tasks,
 })
 console.log(mapStateToProps, TaskList)
 export default connect(mapStateToProps)(TaskList)

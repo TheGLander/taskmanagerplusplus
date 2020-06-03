@@ -35984,13 +35984,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Task extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor(props) {
-    super(props);
-    this.id = props.key;
-  }
-
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.props.value, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AcButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.props.value, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AcButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
       onClick: () => this.props.removeTask(this.props.id),
       icon: "\u2705"
     }));
@@ -36095,9 +36090,6 @@ __webpack_require__.r(__webpack_exports__);
 class TaskList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      mom: props.mom
-    };
   }
 
   render() {
@@ -36106,9 +36098,7 @@ class TaskList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       key: task.id,
       id: task.id,
       taskList: this
-    }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskAdder__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      taskList: this
-    }));
+    }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskAdder__WEBPACK_IMPORTED_MODULE_1__["default"], null));
   }
 
 }
